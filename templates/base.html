@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ meta_title or 'First Priority Logistics Company' }}</title>
+  <meta name="description" content="{{ meta_description or 'Trusted logistics partner delivering freight, customs clearance, and reliable transport solutions.' }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "First Priority Logistics Company",
+    "url": "https://www.firstprioritylogistics.example",
+    "logo": "https://www.firstprioritylogistics.example/static/images/hero.svg",
+    "description": "Trusted logistics provider specializing in freight, customs clearance, and container handling.",
+    "telephone": "+63 912 345 6789",
+    "email": "hello@firstprioritylogistics.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unit 12 Harbor View Complex",
+      "addressLocality": "Manila",
+      "addressRegion": "Metro Manila",
+      "postalCode": "1000",
+      "addressCountry": "PH"
+    },
+    "sameAs": [
+      "https://www.facebook.com/firstprioritylogistics",
+      "https://www.linkedin.com/company/first-priority-logistics"
+    ]
+  }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="{{ url_for('home') }}" class="flex items-center space-x-2 text-xl font-bold text-sky-700" aria-label="First Priority Logistics home">
+          <span>First Priority Logistics Company</span>
+        </a>
+        <div class="hidden md:flex space-x-6 text-sm font-semibold">
+          <a href="{{ url_for('home') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Home</a>
+          <a href="{{ url_for('about') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">About</a>
+          <a href="{{ url_for('services') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Services</a>
+          <a href="{{ url_for('events') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Events</a>
+          <a href="{{ url_for('hiring') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Hiring</a>
+          <a href="{{ url_for('contact') }}" class="hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Contact</a>
+        </div>
+        <button id="menu-button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-sky-700 hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200" aria-label="Mobile navigation">
+      <div class="px-2 pt-2 pb-3 space-y-1 text-sm font-semibold">
+        <a href="{{ url_for('home') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Home</a>
+        <a href="{{ url_for('about') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">About</a>
+        <a href="{{ url_for('services') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Services</a>
+        <a href="{{ url_for('events') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Events</a>
+        <a href="{{ url_for('hiring') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Hiring</a>
+        <a href="{{ url_for('contact') }}" class="block px-3 py-2 rounded-md hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-1">{% block content %}{% endblock %}</main>
+
+  <footer class="bg-slate-900 text-slate-100 py-10" aria-label="Footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold">First Priority Logistics Company</h3>
+        <p class="mt-2 text-sm text-slate-300">Reliable logistics for businesses that demand precision and care.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li><a class="hover:text-cyan-300" href="{{ url_for('about') }}">About</a></li>
+          <li><a class="hover:text-cyan-300" href="{{ url_for('services') }}">Services</a></li>
+          <li><a class="hover:text-cyan-300" href="{{ url_for('events') }}">Events</a></li>
+          <li><a class="hover:text-cyan-300" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Contact</h3>
+        <p class="mt-2 text-sm text-slate-300">Unit 12 Harbor View Complex, Manila, Metro Manila, 1000</p>
+        <p class="mt-1 text-sm">Phone: <a class="hover:text-cyan-300" href="tel:+639123456789">+63 912 345 6789</a></p>
+        <p class="mt-1 text-sm">Email: <a class="hover:text-cyan-300" href="mailto:hello@firstprioritylogistics.com">hello@firstprioritylogistics.com</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Business Hours</h3>
+        <p class="mt-2 text-sm text-slate-300">Monday - Saturday: 8:00 AM - 6:00 PM</p>
+        <p class="mt-1 text-sm text-slate-300">Sunday & holidays: By appointment</p>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-slate-800 pt-4 text-center text-sm text-slate-400">
+      © {{ 2024 }} First Priority Logistics Company. All rights reserved.
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

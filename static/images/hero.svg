@@ -1,0 +1,19 @@
+<svg width="1440" height="600" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">First Priority Logistics Company hero placeholder</title>
+  <desc id="desc">Abstract gradient background with logistics themed shapes.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="600" fill="url(#grad)" />
+  <g fill="#ffffff" opacity="0.2">
+    <circle cx="200" cy="120" r="80" />
+    <rect x="900" y="80" width="320" height="160" rx="24" />
+    <polygon points="200,520 520,420 460,560" />
+    <polygon points="920,400 1240,320 1180,500" />
+  </g>
+  <text x="120" y="320" font-size="64" font-family="Arial, sans-serif" fill="#e2e8f0" font-weight="700">Reliable Logistics</text>
+  <text x="120" y="380" font-size="32" font-family="Arial, sans-serif" fill="#e2e8f0">Moving goods with care and precision.</text>
+</svg>

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="bg-slate-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <div>
+        <p class="text-sm uppercase tracking-wide text-slate-600 font-semibold">Contact</p>
+        <h1 class="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Let’s move your next shipment.</h1>
+        <p class="mt-3 text-slate-700">Reach our coordinators for quotes, documentation guidance, or urgent dispatch requests.</p>
+
+        <div class="mt-6 space-y-3 text-sm text-slate-700">
+          <p><strong>Office:</strong> Unit 12 Harbor View Complex, Manila, Metro Manila, 1000</p>
+          <p><strong>Primary Mobile:</strong> <a class="text-cyan-700 hover:text-cyan-500" href="tel:+639123456789">+63 912 345 6789</a></p>
+          <p><strong>Business Landline:</strong> <a class="text-cyan-700 hover:text-cyan-500" href="tel:+6328123456">+63 2 8123 456</a></p>
+          <p><strong>Email:</strong> <a class="text-cyan-700 hover:text-cyan-500" href="mailto:hello@firstprioritylogistics.com">hello@firstprioritylogistics.com</a></p>
+          <p><strong>Business Hours:</strong> Monday - Saturday, 8:00 AM - 6:00 PM</p>
+          <p><strong>Social:</strong> <a class="text-cyan-700 hover:text-cyan-500" href="https://www.facebook.com/firstprioritylogistics" target="_blank" rel="noopener">Facebook</a> · <a class="text-cyan-700 hover:text-cyan-500" href="https://www.linkedin.com/company/first-priority-logistics" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+
+        <div class="mt-8">
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe title="First Priority Logistics Company location" class="w-full h-64 rounded-lg border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.046119325279!2d120.97227431484063!3d14.583194089817807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca3f6d0af58b%3A0xf0e3a8659d2b1b6!2sManila%20Harbor%20Center!5e0!3m2!1sen!2sph!4v1616581900000!5m2!1sen!2sph" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        {% if error_message %}
+          <div class="mb-4 p-4 bg-red-100 text-red-800 rounded-lg" role="alert">{{ error_message }}</div>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="mb-4 p-4 bg-green-100 text-green-800 rounded-lg" role="status">
+              {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form id="contact-form" action="{{ url_for('contact') }}" method="POST" novalidate class="p-6 bg-white rounded-lg card-shadow space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-slate-800" for="name">Name</label>
+            <input required type="text" id="name" name="name" class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-800" for="email">Email</label>
+            <input required type="email" id="email" name="email" class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-800" for="message">Message</label>
+            <textarea required id="message" name="message" rows="4" class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500" placeholder="Tell us about your cargo or timeline"></textarea>
+          </div>
+          <p class="client-error form-error text-sm" aria-live="polite"></p>
+          <button type="submit" class="w-full bg-slate-900 text-white px-4 py-2 rounded-md font-semibold hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">Send Message</button>
+          <p class="text-xs text-slate-500">If email is offline, your message is securely stored and we will follow up promptly.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

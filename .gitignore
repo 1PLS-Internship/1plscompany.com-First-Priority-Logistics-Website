@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.data/
+data/messages.json
+data/applications.json

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="bg-slate-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="md:flex md:items-center md:justify-between">
+      <div>
+        <p class="text-sm uppercase tracking-wide text-slate-600 font-semibold">Events</p>
+        <h1 class="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Moments that build resilient teams.</h1>
+        <p class="mt-3 text-slate-700">We celebrate wins, learn together, and invest in community events that strengthen our crews.</p>
+      </div>
+      <a href="{{ url_for('contact') }}" class="mt-4 md:mt-0 inline-block bg-cyan-500 text-slate-900 px-5 py-3 rounded-md font-semibold shadow hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">Invite us to your event</a>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {% for event in events %}
+      <div class="p-6 bg-white rounded-lg card-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-xl font-semibold text-slate-900">{{ event.name }}</h3>
+            <p class="text-sm text-slate-600">{{ event.date }} · {{ event.location }}</p>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full {{ 'bg-green-100 text-green-800' if event.status == 'Upcoming' else 'bg-slate-200 text-slate-800' }}">{{ event.status }}</span>
+        </div>
+        <p class="mt-3 text-sm text-slate-700">{{ event.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Team Building Highlights</h2>
+        <p class="mt-3 text-slate-700">From ropes courses to logistics simulations, our events focus on communication, accuracy, and trust.</p>
+        <ul class="mt-4 text-sm text-slate-700 space-y-2 list-disc list-inside">
+          <li>Dock-to-door relay challenges for smoother handoffs.</li>
+          <li>Safety workshops with Bureau of Customs best practices.</li>
+          <li>Leadership labs for new supervisors and crew leads.</li>
+        </ul>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='images/team-event.svg') }}" alt="Team members participating in a fun logistics exercise" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

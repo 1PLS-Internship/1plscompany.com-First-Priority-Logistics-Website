@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="relative bg-slate-900 text-white">
+  <div class="absolute inset-0">
+    <img src="{{ url_for('static', filename='images/hero.svg') }}" alt="Cargo containers and trucks illustration" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 hero-overlay"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="text-sm uppercase tracking-wide text-cyan-200 font-semibold">First Priority Logistics Company</p>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-bold leading-tight">Precision logistics, first-class reliability.</h1>
+      <p class="mt-4 text-lg text-slate-200">"Every mile we travel carries our promise to deliver with care, speed, and integrity."</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="{{ url_for('contact') }}" class="bg-cyan-500 text-slate-900 px-5 py-3 rounded-md font-semibold shadow hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Contact Us</a>
+        <a href="{{ url_for('about') }}" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">About</a>
+        <a href="{{ url_for('services') }}" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Services</a>
+        <a href="{{ url_for('hiring') }}" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Hiring</a>
+        <a href="{{ url_for('events') }}" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Events</a>
+        <a href="#more-info" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">More Information</a>
+        <a href="#team-building" class="bg-white/10 border border-white/30 px-5 py-3 rounded-md font-semibold hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Team Building</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="more-info" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl font-bold text-slate-900">Mission & Vision</h2>
+      <p class="mt-4 text-slate-700">Our mission is to protect every shipment with meticulous planning, transparent updates, and dependable partners. We empower clients to move goods swiftly while staying compliant and secure.</p>
+      <p class="mt-3 text-slate-700">Our vision is to become the most trusted logistics ally in the region—uniting people, technology, and purpose to keep supply chains resilient.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <div class="p-5 bg-white card-shadow rounded-lg">
+          <h3 class="font-semibold text-slate-900">Core Services</h3>
+          <ul class="mt-2 text-sm text-slate-700 space-y-2">
+            <li>Time-definite freight coordination across sea and land routes.</li>
+            <li>Container logistics with secure loading, sealing, and tracking.</li>
+            <li>Customs clearance with accurate documentation and approvals.</li>
+            <li>Local and same-day delivery for urgent needs.</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-slate-900 text-slate-50 rounded-lg">
+          <h3 class="font-semibold">Partnership Spotlight</h3>
+          <p class="mt-2 text-sm text-slate-200">We partner with 1GPF and TVIP to keep hotel and hospitality chains stocked. We proudly deliver fresh fruits and vegetables for 1GPF directly to hotel kitchens with cold-chain care.</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6 bg-white card-shadow rounded-lg">
+      <h3 class="text-xl font-semibold text-slate-900">Services at a glance</h3>
+      <div class="mt-4 space-y-4">
+        <div class="flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-semibold">1</div>
+          <div>
+            <h4 class="font-semibold">Freight Services</h4>
+            <p class="text-sm text-slate-700">Coordinated sea and land freight tailored to hotel and retail inventory cycles.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-semibold">2</div>
+          <div>
+            <h4 class="font-semibold">Container Logistics</h4>
+            <p class="text-sm text-slate-700">Efficient FCL and LCL handling for 20' and 40' containers with real-time status updates.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-semibold">3</div>
+          <div>
+            <h4 class="font-semibold">Customs & Approvals</h4>
+            <p class="text-sm text-slate-700">Proactive Bureau of Customs documentation preparation to prevent delays.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-semibold">4</div>
+          <div>
+            <h4 class="font-semibold">Same-day Delivery</h4>
+            <p class="text-sm text-slate-700">Dedicated drivers for urgent drop-offs across Metro Manila.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white" id="team-building">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-slate-900">Team Building & Culture</h2>
+        <p class="mt-3 text-slate-700">Our crews run on trust, training, and teamwork. From port to warehouse to final mile, collaboration fuels our speed and safety.</p>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+          <div class="p-4 bg-slate-900 text-white rounded-lg">
+            <h3 class="font-semibold">Safety First</h3>
+            <p class="text-sm text-slate-200 mt-1">Routine drills and refresher courses keep every handler audit-ready.</p>
+          </div>
+          <div class="p-4 bg-white card-shadow rounded-lg">
+            <h3 class="font-semibold text-slate-900">Growth Mindset</h3>
+            <p class="text-sm text-slate-700 mt-1">Cross-training keeps our teams ready to pivot with your supply chain.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='images/team-event.svg') }}" alt="Team members collaborating at an outdoor event" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
